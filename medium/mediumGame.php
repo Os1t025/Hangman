@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Hang Man (Easy)</h1>
+    <h1>Hang Man (Medium)</h1>
     <div class="container">
         <?php
         session_start();
