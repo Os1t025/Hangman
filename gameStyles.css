@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #B5E2FA;
+    background-image: url('gridlines.png');
+    background-repeat: repeat;
+    margin: 0;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 20pt;
+}
+
+input[type="text"]{
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"][name="quit"], .submit-button{
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    padding: 8px 16px; /* Adjust padding as needed */
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+}
+
+input[type="submit"][name="quit"]:hover, .submit-button:hover {
+    background-color: #EDDEA4;
+}
+a{
+    text-decoration: none;
+    color: #F9F7F3;
+}
+strong{display: inline;}
+
+.hidden-characters {
+    font-weight: bold;
+    font-size: 40pt;
+    /* Add other styles as needed */
+}

@@ -1,0 +1,39 @@
+body {
+    font-family: Mistral, Arial, sans-serif;
+    background-color: #B5E2FA;
+    background-image: url('gridlines.png');
+    background-repeat: repeat;
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+table {
+    margin: 0 auto; 
+    background-color: white;
+    width: 20%;
+}
+
+th, td {
+    padding: 10px;
+}
+.back-btn {
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    cursor: pointer;
+}
+button {
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 8px;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #EDDEA4;
+}

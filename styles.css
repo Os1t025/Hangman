@@ -1,0 +1,145 @@
+body {
+    font-family: Mistral, Arial, sans-serif;
+    background-color: #B5E2FA;
+    background-image: url('gridlines.png');
+    background-repeat: repeat;
+    margin: 0;
+    font-size: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+body .game-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    font-size: 20pt;
+}
+body .game-container button{
+    width: 300px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.image-wrapper img {
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-wrapper img:hover {
+    transform: scale(0.9);
+}
+
+#hangman-image {
+    margin-top: 20px; 
+    width: 30%; 
+}
+
+.form-container {
+    margin: 20px; 
+    width: 300px;
+    display: inline-block;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #EDDEA4;
+}
+
+.container img[src*="easy.png"]{
+    width: 200px;
+    height: auto; 
+}
+
+.container img[src*="medium.png"]{
+    width: 240px;
+    height: auto; 
+}
+
+.container img[src*="hard.png"] {
+    width: 210px;
+    height: auto; 
+}
+
+.container img[src*="dance.gif"] {
+    width: 200px; 
+    height: auto; 
+}
+
+.container h1 {
+    color: #F7A072;
+    margin: 0;
+}
+
+.container h2 {
+    margin: 8px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sign-out-btn {
+    margin-right: 50px; 
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    cursor: pointer;
+}
+
+.score-btn {
+    margin-left: 10px;
+    padding: 8px 16px;
+    background-color: #0FA3B1;
+    color: #F9F7F3;
+    border: none;
+    cursor: pointer;
+}
+
+.play-music-btn {
+    background-color: transparent;
+    border: none; 
+    padding: 0; 
+}
+
+.play-music-btn:hover {
+    background-color: transparent;
+}
+
+.container h3 {
+    color: #F7A072;
+    font-size: 34px;
+}
