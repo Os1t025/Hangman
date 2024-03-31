@@ -30,6 +30,5 @@ The Hangman Game relies on the following technologies:
 
 - PHP
 - HTML/CSS
-- JavaScript (for frontend interactivity)
 
 
