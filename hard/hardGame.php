@@ -1,3 +1,6 @@
+<?php
+        session_start();
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,6 @@
     <h1>Hang Man (Hard)</h1>
     <div class="container">
         <?php
-        session_start();
         include 'hardConfiguration.php';
         include '../methods.php';
 
@@ -39,7 +41,23 @@
                 $_SESSION['usedLetters'][] = strtolower($userInput);
             }
         }
-
+        // Display hangman images based on the number of attempts
+        $hangmanImages = [
+            "hangman_nohead.png",
+            "hangman_head.png",
+            "hangman_throat.png",
+            "hangman_body.png",
+            "hangman_hand.png",
+            "hangman_hands.png",
+            "hangman_leg.png",
+            "hangman_legs.png",
+            "hangman_full.png"
+        ];
+        
+        // Display hangman image
+        if ($_SESSION['attempts'] > 0 && $_SESSION['attempts'] <= count($hangmanImages)) {
+            echo "<img src='" . $hangmanImages[$_SESSION['attempts'] - 1] . "' alt='Hangman Image'>";
+        }
         // Checks if the $_SESSION['answer'] variable is set. If not, initializes the game and displays attempts remaining.
         if (!isset($_SESSION['answer'])) {
             $animal_array = explode(',', fetchRandomWord($WORD_LIST_FILE));
