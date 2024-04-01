@@ -80,13 +80,21 @@ function addScore($score_to_add) {
 }
 
 function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_FOR_WIN){
-    //clear session variables if any of the game over conditions are met
+    // Display fly image
+    if ($_SESSION['attempts'] >= $MAX_ATTEMPTS) {
+        echo '<img src="fly.png" alt="Fly" class="fly">';
+    }
+
+
+
+    // Clear session variables if any of the game over conditions are met
     if ($userAttempts >= $MAX_ATTEMPTS || $hidden == $answer){
         unset($_SESSION['attempts']);
         unset($_SESSION['answer']);
         unset($_SESSION['hidden']);
     }
-    //handle loss
+
+    // Handle loss
     if ($userAttempts >= $MAX_ATTEMPTS) {
         echo "Game Over. The correct word was ";
         foreach ($answer as $letter) echo $letter;
@@ -95,7 +103,7 @@ function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_F
         echo '<div class="game-buttons"><button class="submit-button"><a href="../stickman.php">Play Again</a></button></div><br>';
         die();
     }
-    //handle win
+    // Handle win
     if ($hidden == $answer) {
         addScore($POINTS_FOR_WIN);
         echo "Correct!! The answer was ";
@@ -131,4 +139,5 @@ function getScore(){
     }
 }
 ?>
+
 

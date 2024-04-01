@@ -46,3 +46,34 @@ strong{display: inline;}
     font-size: 40pt;
     /* Add other styles as needed */
 }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hangman-image {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes flyAnimation {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(45deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(10px) rotate(-45deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.fly {
+    position: absolute; 
+    top: 10%; 
+    left: 43%; 
+    transform: translate(-50%, -50%); 
+    animation: flyAnimation 5s infinite;
+}
+
+
+
