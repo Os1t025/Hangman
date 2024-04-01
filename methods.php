@@ -84,8 +84,10 @@ function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_F
     if ($_SESSION['attempts'] >= $MAX_ATTEMPTS) {
         echo '<img src="fly.png" alt="Fly" class="fly">';
     }
-
-
+    // Display win image
+    if ($hidden == $answer) {
+        echo '<img src="winner.gif" alt="win" class="fly">';
+    }
 
     // Clear session variables if any of the game over conditions are met
     if ($userAttempts >= $MAX_ATTEMPTS || $hidden == $answer){
