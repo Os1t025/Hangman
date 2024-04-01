@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $new_user_score=0;
+    $new_user_score = 0;
 
     // Check if the username already exists in player.txt
     $file = fopen('player.txt', 'r');
@@ -29,3 +29,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
