@@ -83,10 +83,12 @@ function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_F
     // Display fly image
     if ($_SESSION['attempts'] >= $MAX_ATTEMPTS) {
         echo '<img src="fly.png" alt="Fly" class="fly">';
+        echo '<img src="over.gif" alt="over" class="pics">';
     }
     // Display win image
     if ($hidden == $answer) {
         echo '<img src="winner.gif" alt="win" class="fly">';
+        echo '<img src="win.gif" alt="winner" class="pics">';
     }
 
     // Clear session variables if any of the game over conditions are met
@@ -102,7 +104,7 @@ function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_F
         foreach ($answer as $letter) echo $letter;
         echo "<br>Points earned: 0";
         echo "<br>Your score: " . getScore();
-        echo '<div class="game-buttons"><button class="submit-button"><a href="../stickman.php">Play Again</a></button></div><br>';
+        echo '<div class="game-buttons"><button class="submit-button play-again"><a href="../stickman.php" style="color: inherit;">Play Again</a></button></div><br>';
         die();
     }
     // Handle win
@@ -112,10 +114,10 @@ function checkGameOver($MAX_ATTEMPTS, $userAttempts, $answer, $hidden, $POINTS_F
         foreach ($answer as $letter) echo $letter;
         echo "<br>Points earned: " . $POINTS_FOR_WIN;
         echo "<br>Your new score: " . getScore();
-        echo '<div class="game-buttons"><button class="submit-button"><a href="../stickman.php">Play Again</a></button></div><br>';
+        echo '<div class="game-buttons"><button class="submit-button play-again"><a href="../stickman.php" style="color: inherit;">Play Again</a></button></div><br>';
         die();
     }
-}
+}    
 
 function getScore(){
     // Get the username from the session

@@ -8,21 +8,40 @@ body {
     font-size: 30px;
 }
 
+.pin-image {
+    position: absolute;
+    top: -15px; /* Adjust this value to move the pin up or down */
+    left: 50.5%; /* Adjust this value to horizontally center the pin */
+    transform: translateX(-50%);
+    width: 120px; /* Adjust the width as needed */
+    height: auto;
+    
+}
+.background-window {
+    background-color: #EDDEA4;
+    border: 2px solid #333; 
+    padding: 20px; 
+    max-width: 600px; 
+    margin: 50px auto; /* Center the window */
+}
+
 table {
     margin: 0 auto; 
-    background-color: white;
+    background-color: #F9F7F3; 
     width: 20%;
 }
 
 th, td {
     padding: 10px;
 }
+
 .back-btn {
     background-color: #0FA3B1;
     color: #F9F7F3;
     border: none;
     cursor: pointer;
 }
+
 button {
     background-color: #0FA3B1;
     color: #F9F7F3;
@@ -35,5 +54,5 @@ button {
 }
 
 button:hover {
-    background-color: #EDDEA4;
+    background-color: #B5E2FA;
 }

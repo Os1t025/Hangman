@@ -1,20 +1,6 @@
 <?php
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
-    exit;
-}
-
-if (isset($_POST['sign_out'])) {
-    session_destroy();
-    header("Location: index.php");
-    exit;
-}
-if (isset($_POST['quit'])) {
-    unset($_SESSION['answer']);
-}
+    session_start(); // Start the session
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +11,8 @@ if (isset($_POST['quit'])) {
 </head>
 
 <body>
+<img src="pin.png" alt="Pin Image" class="pin-image">
+<div class="background-window">
     <h1>LEADERBOARD - TOP 5 SCORES</h1>
     <table border="1">
         <tr>
@@ -62,11 +50,18 @@ if (isset($_POST['quit'])) {
             <th>MY SCORE</th>
         </tr>
         <?php
-        $currentUser = strtoupper($_SESSION['username']);
-        $userScore = isset($scores[$currentUser]) ? $scores[$currentUser] : 'N/A';
-        echo "<tr>";
-        echo "<td>{$userScore}</td>";
-        echo "</tr>";
+        // Check if the username is set in the session
+        if (isset($_SESSION['username'])) {
+            $currentUser = strtoupper($_SESSION['username']);
+            $userScore = isset($scores[$currentUser]) ? $scores[$currentUser] : 'N/A';
+            echo "<tr>";
+            echo "<td>{$userScore}</td>";
+            echo "</tr>";
+        } else {
+            echo "<tr>";
+            echo "<td>User not logged in</td>";
+            echo "</tr>";
+        }
         ?>
     </table>
     <br>
@@ -74,10 +69,9 @@ if (isset($_POST['quit'])) {
     <form action="stickman.php" method="post">
         <button class="back-btn" type="submit">Back</button>
     </form>
+    </div> <!-- Closing background-window div -->
 </body>
 
 </html>
-
-
 
 

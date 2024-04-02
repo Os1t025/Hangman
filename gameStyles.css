@@ -4,15 +4,31 @@ body {
     background-image: url('gridlines.png');
     background-repeat: repeat;
     margin: 0;
-    text-align: center;
 }
+
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-size: 20pt;
+    text-align: center;
+    
+    border: 2px solid #333; 
+    padding: 20px; 
+    max-width: 600px; 
+    background-color: #EDDEA4; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+
+.guess {
+    background-color: #F7A072; 
+    border: 2px solid #000; 
+    padding: 20px; 
+    margin: 20px auto; 
+    max-width: 400px; 
 }
 
 input[type="text"]{
@@ -22,7 +38,7 @@ input[type="text"]{
     box-sizing: border-box;
 }
 
-input[type="submit"][name="quit"], .submit-button{
+input[type="submit"][name="quit"] {
     background-color: #0FA3B1;
     color: #F9F7F3;
     border: none;
@@ -32,9 +48,15 @@ input[type="submit"][name="quit"], .submit-button{
     text-align: center;
 }
 
-input[type="submit"][name="quit"]:hover, .submit-button:hover {
-    background-color: #EDDEA4;
+input[type="submit"][name="quit"]:hover {
+    background-color: #B5E2FA;
 }
+a{
+    text-decoration: none;
+    color: #B5E2FA;
+}
+
+
 a{
     text-decoration: none;
     color: #F9F7F3;
@@ -56,8 +78,15 @@ strong{display: inline;}
 }
 
 .hangman-image {
+    position: absolute;
+    top: 50%;
+    left: 765px; /* Adjusted to move images to the right side */
+    transform: translateY(-50%);
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
+    width: 750px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+   
 }
 @keyframes flyAnimation {
     0% { transform: translateY(0) rotate(0deg); }
@@ -69,11 +98,15 @@ strong{display: inline;}
 
 .fly {
     position: absolute; 
-    top: 10%; 
-    left: 43%; 
+    top: 3%; 
+    left: 20%; 
     transform: translate(-50%, -50%); 
     animation: flyAnimation 5s infinite;
 }
 
-
+.pics {
+    position: absolute; 
+    top: 30%; 
+    left: 1300px; 
+}
 

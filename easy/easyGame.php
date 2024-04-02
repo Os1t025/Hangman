@@ -12,8 +12,9 @@
 </head>
 
 <body>
-    <h1>Hang Man (Easy)</h1>
+    
     <div class="container">
+    <h1>Hang Man (Easy)</h1>
         <?php
         include 'easyConfiguration.php';
         include '../methods.php';
@@ -54,9 +55,9 @@
         
         // Display hangman image
         if ($_SESSION['attempts'] > 0 && $_SESSION['attempts'] <= count($hangmanImages)) {
-            echo "<img src='" . $hangmanImages[$_SESSION['attempts'] - 1] . "' alt='Hangman Image'>";
+            echo "<img src='" . $hangmanImages[$_SESSION['attempts'] - 1] .  "' alt='Hangman Image' class='hangman-image'>"; // refrence the hangman image class which was not done before hence why image was overflowing the window
         }
-
+        
         // Checks if the $_SESSION['answer'] variable is set. If not, initializes the game and displays attempts remaining.
         if (!isset($_SESSION['answer'])) {
             $animal_array = explode(',', fetchRandomWord($WORD_LIST_FILE));
@@ -85,11 +86,13 @@
         echo '</div>';
         ?>
         <!--submit guesses or ask for a different word-->
+        <div class = "guess">
         <form name="inputForm" action="easyGame.php" method="post"><br>
             Your Guess: <input name="userInput" type="text" size="1" maxlength="1" />
             <input type="submit" name="check" value="Submit Guess" />
             <input type="submit" name="newWord" value="Change Word" />
         </form>
+    </div>
 
         <!-- Quit button form -->
         <form action="../stickman.php" method="post">
