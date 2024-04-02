@@ -52,8 +52,7 @@
             "hangman_hands.png",
             "hangman_leg.png",
             "hangman_legs.png",
-            "hangman_dead1.jpg",
-            "hangman_dead2.jpg"
+            "hangman_full.png"
         ];
         
         // Display hangman image

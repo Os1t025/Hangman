@@ -6,6 +6,9 @@ body {
     margin: 0;
 }
 
+
+
+
 .container {
     position: relative;
     display: flex;
@@ -78,6 +81,8 @@ strong{display: inline;}
 }
 
 .hangman-image {
+   
+
     position: absolute;
     top: 50%;
     left: 765px; /* Adjusted to move images to the right side */
@@ -98,15 +103,11 @@ strong{display: inline;}
 
 .fly {
     position: absolute; 
-    top: 3%; 
-    left: 20%; 
+    top: 10%; 
+    left: 43%; 
     transform: translate(-50%, -50%); 
     animation: flyAnimation 5s infinite;
 }
 
-.pics {
-    position: absolute; 
-    top: 30%; 
-    left: 1300px; 
-}
+
 

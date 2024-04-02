@@ -29,16 +29,25 @@ if (isset($_POST['quit'])){
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <div class="container">
         <div class="image-container">
-            <img id="hangman-image" src="hangman.png" alt="Hangman Image">
+          <img id="hangman-image" src="hangman.png" alt="Hangman Image"> 
             <h1>WELCOME <?php echo strtoupper($_SESSION['username']); ?></h1> <!-- Displaying the username -->
         </div>
-        <div class="image-wrapper">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+        <div class = "dance">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <button class="play-music-btn" type="submit" name="play_music">
                     <img src="dance.gif" alt="Dancing Stickman">
                 </button>
+            </form>
+        </div>
+        <div class="image-wrapper">
+          <!--   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <button class="play-music-btn" type="submit" name="play_music">
+                    <img src="dance.gif" alt="Dancing Stickman">
+                </button> -->
             </form>
             <a href="./easy/easyGame.php"><img src="easy.png" alt="Easy"></a>
             <a href="./medium/mediumGame.php"><img src="medium.png" alt="Medium"></a>
